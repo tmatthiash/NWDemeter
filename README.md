@@ -1,3 +1,16 @@
+# demeter
+
+
+
+## Getting started
+
+First thing you need is to be able to replay the .pcap files. We've been using UDP Replay which is found here https://github.com/rigtorp/udpreplay. It needs to be built/installed, follow the listed instructions from the repo's readme.
+
+After that, to actually replay the file you need to know your ethernet interface, from the terminal run <code>ifconfig</code> command. You should see an output that begins with a line that looks something like this <code>ens9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500</code>. The first thing (in this case ens9) is the ethernet interface you want.
+
+Next, from the directory with the replay file in it run udpreplay with the -i and -b flags, for example <code>sudo udpreplay -i ens9 -b C17_SIL_SD1_replay_00002_20210716100336.pcap</code>. 
+
+
 # Getting Started with Create NW.js React App
 
 This project was bootstrapped with [Create NW.js React App](https://github.com/naviapps/create-nw-react-app).
@@ -68,3 +81,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

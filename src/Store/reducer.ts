@@ -2,14 +2,14 @@ import { Action } from "./action"
 
 
 interface State {
-    msgBlock: string[];
+    msgBlock: string[][];
 }
 
 export const defaultState: State = {
-    msgBlock: ["test", "test2"]
+    msgBlock: [["t","e"], ["s","t"]]
 }
 
-export const Reducer = (state: State = defaultState, action: Action = {} as Action): State => {
+export const Reducer = (state: State = defaultState, action: Action): State => {
     switch (action.type) {
         case 'SET_MESSAGE_BLOCK':
             return {

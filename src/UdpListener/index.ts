@@ -65,7 +65,7 @@ server.on("message", (msg, rinfo) => {
   //   path.resolve(__dirname, "./report.json"),
   //   JSON.stringify(decode(msg))
   // );
-  server.close();
+  // server.close();
 });
 
 server.on("error", (err) => {

@@ -10,13 +10,15 @@ import { createStore } from 'redux';
 
 export const store = createStore(Reducer, defaultState);
 
+window.resizeTo(700, 700);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root') || document.createElement('div')
 );
 
 // If you want to start measuring performance in your app, pass a function

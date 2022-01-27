@@ -3,11 +3,16 @@ import dgram from "dgram";
 
 import "../UdpListener/index"
 import regeneratorRuntime from "regenerator-runtime";
+import { createStore } from "redux";
+import { store } from "..";
+import { Reducer, defaultState } from "../Store/reducer";
 
 describe("Test with a buffer from a file", () => {
-    const consoleSpy = jest.spyOn(console, 'log');
+    // const consoleSpy = jest.spyOn(console, 'log');  
 
     beforeEach(() => {
+
+        const store = createStore(Reducer, defaultState);
 
         const rawdata = fs.readFileSync(__dirname + "/buffer.json");
         const jsonBuffer = JSON.parse(rawdata.toString());
@@ -30,7 +35,11 @@ describe("Test with a buffer from a file", () => {
         await new Promise((r) => setTimeout(r, 2000));
         expect(wait).toBeDefined();
 
-        const loggedData = consoleSpy.mock.calls[1][0][0]
-        expect(loggedData).toContain("Row 00: 11011001000010010010101100000000")
+        console.log("store length ", store.getState().msgBlock.length)
+
+        expect(store.getState().msgBlock.length).toEqual(8);
+
+        // const loggedData = consoleSpy.mock.calls[1][0][0]
+        // expect(loggedData).toContain("Row 00: 11011001000010010010101100000000")
     });
 });

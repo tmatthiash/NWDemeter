@@ -10,8 +10,6 @@ import { createStore } from 'redux';
 
 export const store = createStore(Reducer, defaultState);
 
-window.resizeTo(700, 700);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

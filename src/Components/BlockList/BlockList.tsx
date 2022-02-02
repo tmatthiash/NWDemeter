@@ -7,7 +7,7 @@ import "./BlockList.css"
 export const BlockList = () => {
 
     const msgBlock = useAppSelector((state) => state.msgBlock)
-    // window.resizeTo(700, 700);
+    window.resizeTo(700, 700);
 
     return (
         <div className="message-block-holder">

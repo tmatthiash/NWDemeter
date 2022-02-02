@@ -39,7 +39,7 @@ server.on("message", (msg, rinfo) => {
   const dispatchAction = () => {
     return {
       type: 'SET_MESSAGE_BLOCK',
-      msgBlock: binaryPackets
+      msgBlock: binaryPackets //binaryPackets
     }
   }
 
@@ -78,5 +78,5 @@ server.on("listening", () => {
   console.log(`server listening ${address.address}:${address.port}`);
 });
 
-server.bind(60084, "255.255.255.255");
+server.bind(60084);
 

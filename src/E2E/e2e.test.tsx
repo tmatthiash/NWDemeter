@@ -2,18 +2,13 @@ import fs from "fs";
 import dgram from "dgram";
 
 import "../UdpListener/index"
-import regeneratorRuntime from "regenerator-runtime";
-import { createStore } from "redux";
 import { store } from "..";
-import { Reducer, defaultState } from "../Store/reducer";
 
 describe("Test with a buffer from a file", () => {
     // const consoleSpy = jest.spyOn(console, 'log');  
-
+    
     beforeEach(() => {
-
-        const store = createStore(Reducer, defaultState);
-
+        
         const rawdata = fs.readFileSync(__dirname + "/buffer.json");
         const jsonBuffer = JSON.parse(rawdata.toString());
         const newBuffer = Buffer.from(jsonBuffer.data);

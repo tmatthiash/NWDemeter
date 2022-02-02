@@ -45,9 +45,9 @@ server.on("message", (msg, rinfo) => {
 
   store.dispatch(dispatchAction());
 
-  console.log(binaryPackets);
-  const firstPacketFormattedToJSON = formatPacketToJSON(binaryPackets[0])
-  console.log(firstPacketFormattedToJSON);
+  // console.log(binaryPackets);
+  // const firstPacketFormattedToJSON = formatPacketToJSON(binaryPackets[0])
+  // console.log(firstPacketFormattedToJSON);
 
   // const report = `server got: ${util.inspect(
   //   decode(msg),{

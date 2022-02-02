@@ -30,8 +30,6 @@ describe("Test with a buffer from a file", () => {
         await new Promise((r) => setTimeout(r, 2000));
         expect(wait).toBeDefined();
 
-        console.log("store length ", store.getState().msgBlock.length)
-
         expect(store.getState().msgBlock.length).toEqual(8);
 
         // const loggedData = consoleSpy.mock.calls[1][0][0]

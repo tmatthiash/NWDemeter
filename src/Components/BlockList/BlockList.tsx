@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux"
 import { useAppSelector } from "../../Store/AppState"
 import { v4 as uuidv4 } from 'uuid';
-import '../../UdpListener/index';
+// import '../../UdpListener/index';
 import "./BlockList.css"
 
 export const BlockList = () => {
 
     const msgBlock = useAppSelector((state) => state.msgBlock)
-    window.resizeTo(700, 700);
+    // window.resizeTo(700, 700);
 
     return (
         <div className="message-block-holder">

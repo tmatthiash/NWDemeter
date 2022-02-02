@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { BlockList } from './Components/BlockList/BlockList';
+import "./UdpListener/index"
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <BlockList />
@@ -23,5 +24,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
